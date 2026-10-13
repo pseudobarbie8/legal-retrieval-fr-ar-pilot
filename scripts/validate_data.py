@@ -8,6 +8,10 @@ def load(path):
 passages = load("data/passages.jsonl")
 questions = load("data/questions.jsonl")
 errors = []
+if not passages or not questions:
+    errors.append("data files are empty")
+if not passages or not questions:
+    errors.append("data files are empty")
 
 pids = [p["id"] for p in passages]
 if len(pids) != len(set(pids)):
